@@ -16,7 +16,6 @@ function Checkout() {
         />
 
         <div>
-          <h3>Hello, Usuário</h3>
           <h2 className="checkout__title">You shopping Basket</h2>
 
         </div>
