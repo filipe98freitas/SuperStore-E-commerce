@@ -12,7 +12,7 @@ function Checkout() {
         <img
           className="checkout__ad"
           src={bannerImg}
-          alt=""
+          alt="imagem do banner"
         />
 
         <div>
