@@ -1,12 +1,14 @@
 import React from "react";
 import "../css/header.css";
 import LogoImg from "../images/logo.png";
+import { Link } from "react-router-dom";
 
 function header() {
   return (
     <div className="header">
-      <img className="header_logo" src={LogoImg} alt="Imagem do Logo" />
-
+      <Link to="/">
+        <img className="header_logo" src={LogoImg} alt="Imagem do Logo" />
+      </Link>
       <div className="header_search">
         <input className="header_SearchInput" type="text" />
       </div>
