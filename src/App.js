@@ -1,7 +1,14 @@
+import {BrowserRouter, Switch, Route} from "react-router-dom"
+import Checkout from "./components/Checkout";
+
 
 function App() {
   return (
-    <div>Hello world</div>
+    <BrowserRouter>
+      <Switch>
+        <Route path="/checkout" component={Checkout}/> 
+      </Switch>
+    </BrowserRouter>
   );
 }
 
