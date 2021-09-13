@@ -5,24 +5,24 @@ import LogoImg from "../images/logo.png";
 function header() {
   return (
     <div className="header">
-      <img className="header_logo" src={LogoImg} />
+      <img className="header_logo" src={LogoImg} alt="Imagem do Logo" />
 
       <div className="header_search">
         <input className="header_SearchInput" type="text" />
       </div>
 
       <div className="header_nav">
-        <div className="header__option">
+        <div className="header_option">
           <span className="header_optionLineOne">Hello Guest</span>
           <span className="header_optionLineTwo">Sign In</span>
         </div>
 
-        <div className="header__option">
+        <div className="header_option">
           <span className="header_optionLineOne">Returns</span>
           <span className="header_optionLineTwo">and Orders</span>
         </div>
 
-        <div className="header__option">
+        <div className="header_option">
           <span className="header_optionLineOne">Your</span>
           <span className="header_optionLineTwo">Prime</span>
         </div>
