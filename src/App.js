@@ -1,10 +1,11 @@
 import { BrowserRouter, Switch, Route } from "react-router-dom";
 import Checkout from "./components/Checkout";
-import header from "./components/header";
+import Header from "./components/Header";
 
 function App() {
   return (
     <BrowserRouter>
+      <Header />
       <Switch>
         <Route path="/checkout" component={Checkout} />
       </Switch>
