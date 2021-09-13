@@ -2,6 +2,7 @@ import React from "react";
 import "../css/Checkout.css";
 import bannerImg from "../images/bannerCheckout.jpg"
 import Subtotal from "./Subtotal";
+import CheckoutProduct from "./CheckoutProduct"
 
 function Checkout() {
 ;
@@ -17,7 +18,7 @@ function Checkout() {
 
         <div>
           <h2 className="checkout__title">You shopping Basket</h2>
-
+          <CheckoutProduct/>
         </div>
       </div>
 
