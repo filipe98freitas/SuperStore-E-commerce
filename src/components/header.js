@@ -1,13 +1,11 @@
 import React from "react";
 import "../css/header.css";
+import LogoImg from "../images/logo.png";
 
 function header() {
   return (
     <div className="header">
-      <img
-        className="header_logo"
-        src="http://pngimg.com/uploads/amazon/amazon_PNG11.png"
-      />
+      <img className="header_logo" src={LogoImg} />
 
       <div className="header_search">
         <input className="header_SearchInput" type="text" />
