@@ -1,12 +1,12 @@
 import React from "react";
-import "./header.css";
+import "../css/header.css";
 
 function header() {
   return (
     <div className="header">
       <img
         className="header_logo"
-        src="http://pngimg.com/uploads/amazon/amazon_PNG11.png"
+        src="../images/logo.png"
       />
     
     
