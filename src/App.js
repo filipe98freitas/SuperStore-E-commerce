@@ -7,9 +7,9 @@ function App() {
   return (
     <BrowserRouter>
       <Header />
-      <Home />
       <Switch>
-        <Route path="/checkout" component={Checkout} />
+        <Route exact path="/checkout" component={Checkout} />
+        <Route path="/" component={Home} />
       </Switch>
     </BrowserRouter>
   );
