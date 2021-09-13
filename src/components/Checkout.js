@@ -19,6 +19,8 @@ function Checkout() {
         <div>
           <h2 className="checkout__title">You shopping Basket</h2>
           <CheckoutProduct/>
+          <CheckoutProduct/>
+          <CheckoutProduct/>
         </div>
       </div>
 
