@@ -17,10 +17,12 @@ function header() {
       </div>
 
       <div className="header_nav">
-        <div className="header_option">
-          <span className="header_optionLineOne">Hello Guest</span>
-          <span className="header_optionLineTwo">Sign In</span>
-        </div>
+        <Link to="/Login">
+          <div className="header_option">
+            <span className="header_optionLineOne">Hello Guest</span>
+            <span className="header_optionLineTwo">Sign In</span>
+          </div>
+        </Link>
 
         <div className="header_option">
           <span className="header_optionLineOne">Returns</span>
@@ -29,7 +31,7 @@ function header() {
 
         <div className="header_option">
           <span className="header_optionLineOne">Your</span>
-          <span className="header_optionLineTwo">Prime</span>
+          <span className="header_optionLineTwo">Premium</span>
         </div>
         <div className="header_optionBasket">
           <ShoppingBasketIcon />
