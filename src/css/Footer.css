@@ -1,0 +1,34 @@
+.footer {
+  background-color: #131921;
+  text-align: center;
+}
+.footer img {
+  max-width: 10%;
+  padding-top: 10px;
+}
+
+#items {
+  padding: 1vw;
+  display: flex;
+  align-items: center;
+  justify-content: space-around;
+  text-align: justify;
+}
+
+a {
+  text-decoration: none;
+  color: white;
+}
+
+a:hover {
+  color: rgb(224, 224, 224);
+}
+
+li {
+  /* tirar a bolinha */
+  list-style-type: none;
+}
+
+#footer_titles {
+  color: white;
+}
