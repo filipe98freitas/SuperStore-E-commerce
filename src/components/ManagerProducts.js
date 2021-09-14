@@ -1,6 +1,7 @@
 import React from "react";
 import "bootstrap/dist/css/bootstrap.min.css";
 import axios from "axios";
+import "../css/ManagerProducts.css";
 
 class ManagerProducts extends React.Component {
   state = {
@@ -22,14 +23,13 @@ class ManagerProducts extends React.Component {
         "https://ironrest.herokuapp.com/caiofilipesuperstorecategories"
       );
       this.setState({ categories: [...response.data[0].categories] });
-      console.log(response)
+      console.log(response);
     } catch (err) {
       console.error(err);
     }
   };
 
   render() {
-    
     //Remover duplicidade da categoria
     const newCategoryArr = this.state.categories.filter(
       (el, index) => this.state.categories.indexOf(el) === index
@@ -38,7 +38,7 @@ class ManagerProducts extends React.Component {
     return (
       <div className="container">
         <div className="row">
-        {/* Formulário */}
+          {/* Formulário */}
           <div className="col-6 mt-5">
             <form className="row g-3">
               <div className="col-10">
@@ -118,18 +118,16 @@ class ManagerProducts extends React.Component {
                   type="number"
                   className="form-control"
                   id="validationServer05"
-                  placeholder="0 -> 5.0"  
+                  placeholder="0 -> 5.0"
                   required
                 />
-                <div>
-                  Please provide a rating 0 to 5.
-                </div>
+                <div>Please provide a rating 0 to 5.</div>
               </div>
 
               <div className="col-12">
-                  <button className="btn btn-primary" type="submit">
-                    Submit product
-                  </button>
+                <button className="btn btn-primary" type="submit">
+                  Submit product
+                </button>
               </div>
             </form>
           </div>
@@ -142,22 +140,23 @@ class ManagerProducts extends React.Component {
             >
               {this.state.products.map((productObj) => {
                 return (
-                  <div className="checkoutProduct">
-                    <img
-                      className="checkoutProduct__image"
-                      src={productObj.image}
-                      alt="imagem do produto"
-                    />
-                    <div className="checkoutProduct__info">
+                  <div className="listProduct">
+                    <img src={productObj.image} alt="imagem do produto" />
+                    <div>
                       <p className="checkoutProduct__title">
                         {productObj.title}
                       </p>
-                      <p className="checkoutProduct__price">
-                        <small>$</small>
-                        <strong>{productObj.price}</strong>
+                      <p>
+                        <small>
+                          $ <strong>{productObj.price}</strong>
+                        </small>
+                        <small>
+                          Rating: <strong>{productObj.rating.rate}</strong>
+                        </small>
+                        <button className="btn btn-danger">Remove</button>
+
+                        <button className="btn btn-primary">Edit</button>
                       </p>
-                      <div className="checkoutProduct__rating"></div>
-                      <button>Remove</button>
                     </div>
                   </div>
                 );
