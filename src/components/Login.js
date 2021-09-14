@@ -2,6 +2,7 @@ import React, { useState } from "react";
 import "../css/Login.css";
 import logoLogin from "../images/logo.png";
 import { Link } from "react-router-dom";
+import { auth } from "../firebase";
 
 function Login() {
   const [email, setEmail] = useState("");
@@ -9,6 +10,10 @@ function Login() {
 
   const signIn = (e) => {
     e.preventDefault();
+
+    auth.signInWithEmailAndPassword(email, password).then((auth) => {
+      console.log(auth);
+    });
   };
 
   const register = (e) => {
