@@ -76,6 +76,14 @@ class ManagerProducts extends React.Component {
     }));
   };
 
+  removeClick = (event) => {
+    try {
+      const response = axios.delete(
+        `https://ironrest.herokuapp.com/caiofilipeSuperstore/${event.target.value}`
+      );
+      this.setState({ products: [...response.data] });
+    } catch (err) {console.error(err)}}
+
   render() {
     //Remover duplicidade da categoria
     const newCategoryArr = this.state.categories.filter(
@@ -214,7 +222,7 @@ class ManagerProducts extends React.Component {
                         <small>
                           Rating: <strong>{productObj.rating.rate}</strong>
                         </small>
-                        <button className="btn btn-danger">Remove</button>
+                        <button className="btn btn-danger" onClick={this.removeClick} value={productObj._id}>Remove</button>
                         <button className="btn btn-primary">Edit</button>
                       </p>
                     </div>
