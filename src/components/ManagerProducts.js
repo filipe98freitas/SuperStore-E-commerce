@@ -7,6 +7,12 @@ class ManagerProducts extends React.Component {
   state = {
     products: [],
     categories: [],
+    title: "",
+    price: 0,
+    description: "",
+    category: "",
+    image: "",
+    rating: {},
   };
 
   componentDidMount = async () => {
@@ -23,10 +29,51 @@ class ManagerProducts extends React.Component {
         "https://ironrest.herokuapp.com/caiofilipesuperstorecategories"
       );
       this.setState({ categories: [...response.data[0].categories] });
-      console.log(response);
     } catch (err) {
       console.error(err);
     }
+  };
+
+  componentDidUpdate = async () => {
+    try {
+      const response = await axios.get(
+        "https://ironrest.herokuapp.com/caiofilipeSuperstore"
+      );
+      this.setState({ products: [...response.data] });
+    } catch (err) {
+      console.error(err);
+    }
+  };
+
+  handleChange = (event) => {
+    return this.setState({ [event.target.name]: event.target.value });
+  };
+
+  handleSubmit = (event) => {
+    event.preventDefault();
+    let stateClone = {
+      "title": this.state.title,
+      "price": this.state.price,
+      "description": this.state.description,
+      "category": this.state.category,
+      "image": this.state.image,
+      "rating": this.state.rating,
+    }
+    axios
+      .post("https://ironrest.herokuapp.com/caiofilipeSuperstore", stateClone)
+      .then((response) => {
+        console.log(response);
+      })
+      .catch((err) => console.error(err));
+  };
+
+  rating = (event) => {
+    this.setState((prevState) => ({
+      rating: {
+        ...prevState.rating,
+        rate: event.target.value,
+      },
+    }));
   };
 
   render() {
@@ -40,7 +87,7 @@ class ManagerProducts extends React.Component {
         <div className="row">
           {/* Formulário */}
           <div className="col-6 mt-5">
-            <form className="row g-3">
+            <form className="row g-3" onSubmit={this.handleSubmit}>
               <div className="col-10">
                 <label htmlFor="productName" className="form-label">
                   <strong>Product Name</strong>
@@ -49,6 +96,9 @@ class ManagerProducts extends React.Component {
                   type="text"
                   className="form-control"
                   id="productName"
+                  name="title"
+                  onChange={this.handleChange}
+                  value={this.state.title}
                   required
                 />
               </div>
@@ -60,6 +110,9 @@ class ManagerProducts extends React.Component {
                   type="text"
                   className="form-control"
                   id="productDescription"
+                  name="description"
+                  onChange={this.handleChange}
+                  value={this.state.description}
                   required
                 />
               </div>
@@ -72,17 +125,22 @@ class ManagerProducts extends React.Component {
                   className="form-control"
                   id="productImage"
                   placeholder="http://..."
+                  name="image"
+                  onChange={this.handleChange}
+                  value={this.state.image}
                   required
                 />
               </div>
               <div className="col-10">
-                <label htmlFor="validationServer04" className="form-label">
+                <label htmlFor="productCategory" className="form-label">
                   <strong>Category</strong>
                 </label>
                 <select
                   className="form-select"
-                  id="validationServer04"
-                  aria-describedby="validationServer04Feedback"
+                  id="productCategory"
+                  name="category"
+                  onChange={this.handleChange}
+                  value={this.state.category}
                   required
                 >
                   {newCategoryArr.map((obj) => (
@@ -91,39 +149,41 @@ class ManagerProducts extends React.Component {
                 </select>
               </div>
               <div className="col-5">
-                <label
-                  htmlFor="validationServerUsername"
-                  className="form-label"
-                >
+                <label htmlFor="productPrice" className="form-label">
                   <strong>Price</strong>
                 </label>
-                <div className="input-group has-validation">
-                  <span className="input-group-text" id="inputGroupPrepend3">
+                <div className="input-group">
+                  <span className="input-group-text" id="currency">
                     $
                   </span>
                   <input
-                    type="text"
+                    type="number"
                     className="form-control"
-                    id="validationServerUsername"
+                    id="productPrice"
                     placeholder="00.00"
+                    name="price"
+                    onChange={this.handleChange}
+                    value={this.state.price}
                     required
                   />
                 </div>
               </div>
               <div className="col-5">
-                <label htmlFor="validationServer05" className="form-label">
+                <label htmlFor="productRating" className="form-label">
                   <strong>Rating</strong>
                 </label>
                 <input
                   type="number"
                   className="form-control"
-                  id="validationServer05"
+                  id="productRating"
                   placeholder="0 -> 5.0"
+                  name="rating"
+                  onChange={this.rating}
+                  step="0.1" min="0" max="5"
                   required
                 />
                 <div>Please provide a rating 0 to 5.</div>
               </div>
-
               <div className="col-12">
                 <button className="btn btn-primary" type="submit">
                   Submit product
@@ -131,6 +191,7 @@ class ManagerProducts extends React.Component {
               </div>
             </form>
           </div>
+
           {/* Lista de produtos */}
           <div className="col-6 mt-3">
             <h2>Product List</h2>
@@ -154,7 +215,6 @@ class ManagerProducts extends React.Component {
                           Rating: <strong>{productObj.rating.rate}</strong>
                         </small>
                         <button className="btn btn-danger">Remove</button>
-
                         <button className="btn btn-primary">Edit</button>
                       </p>
                     </div>
