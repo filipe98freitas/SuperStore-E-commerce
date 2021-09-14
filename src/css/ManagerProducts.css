@@ -1,0 +1,23 @@
+  .listProduct {
+    display: flex;
+    padding-top: 5px;
+    padding-bottom: 1px;
+    border-bottom: 1px solid rgb(114, 112, 112);
+}
+
+.listProduct button {
+    margin-right: 10px;
+    margin-left: 10px;
+}
+
+.listProduct img {
+    object-fit: contain;
+    width: 90px;
+    height: 90px;
+    margin-right: 10px;
+  }
+
+  .listProduct small {
+    margin-right: 10px;
+    margin-left: 10px;
+}
