@@ -5,26 +5,26 @@ import logoFooter from "../images/logo.png";
 const Footer = () => {
   return (
     <footer className="footer">
-      <img src={logoFooter} />
+      <img src={logoFooter} alt="" />
 
       <div id="items">
         <div className="footer_information">
           <ul>
             <h5 id="footer_titles">Main Information</h5>
             <li>
-              <a href="#">Sustentability</a>
+              <a href="/">Sustentability</a>
             </li>
             <li>
-              <a href="#">Carrers</a>
+              <a href="/">Carrers</a>
             </li>
             <li>
-              <a href="#">Returns and Replacements</a>
+              <a href="/">Returns and Replacements</a>
             </li>
             <li>
-              <a href="#">Delivery Rates and Policies</a>
+              <a href="/">Delivery Rates and Policies</a>
             </li>
             <li>
-              <a href="#">Track Packages or View Orders</a>
+              <a href="/">Track Packages or View Orders</a>
             </li>
           </ul>
         </div>
@@ -33,13 +33,13 @@ const Footer = () => {
           <ul>
             <h5 id="footer_titles">Work with Us</h5>
             <li>
-              <a href="#">Sell on SuperStore</a>
+              <a href="restricted">Sell on SuperStore</a>
             </li>
             <li>
-              <a href="#">Policy Management</a>
+              <a href="/">Policy Management</a>
             </li>
             <li>
-              <a href="#">See How Make Money with Us</a>
+              <a href="/">See How Make Money with Us</a>
             </li>
           </ul>
         </div>

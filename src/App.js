@@ -14,7 +14,7 @@ function App() {
         <Route exact path="/checkout" component={Checkout} />
         <Route path="/" component={Home} />
       </Switch>
-      <Footer />
+      <Footer/>
     </BrowserRouter>
   );
 }
