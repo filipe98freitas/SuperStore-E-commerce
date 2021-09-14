@@ -33,13 +33,16 @@ const Footer = () => {
           <ul>
             <h5 id="footer_titles">Work with Us</h5>
             <li>
-              <a href="restricted">Sell on SuperStore</a>
+              <a href="/">Sell on SuperStore</a>
             </li>
             <li>
               <a href="/">Policy Management</a>
             </li>
             <li>
               <a href="/">See How Make Money with Us</a>
+            </li>
+            <li>
+              <a href="/fakeautentication">Only for Employees</a>
             </li>
           </ul>
         </div>
