@@ -14,22 +14,31 @@ class ManagerProducts extends React.Component {
         "https://ironrest.herokuapp.com/caiofilipeSuperstore"
       );
       this.setState({ products: [...response.data] });
-      console.log(this.state);
+    } catch (err) {
+      console.error(err);
+    }
+    try {
+      const response = await axios.get(
+        "https://ironrest.herokuapp.com/caiofilipesuperstorecategories"
+      );
+      this.setState({ categories: [...response.data[0].categories] });
+      console.log(response)
     } catch (err) {
       console.error(err);
     }
   };
 
   render() {
+    
     //Remover duplicidade da categoria
-    const categoryArr = this.state.products.map((obj) => obj.category).sort();
-    const newCategoryArr = categoryArr.filter(
-      (el, index) => categoryArr.indexOf(el) === index
+    const newCategoryArr = this.state.categories.filter(
+      (el, index) => this.state.categories.indexOf(el) === index
     );
 
     return (
       <div className="container">
         <div className="row">
+        {/* Formulário */}
           <div className="col-6 mt-5">
             <form className="row g-3">
               <div className="col-10">
@@ -38,13 +47,10 @@ class ManagerProducts extends React.Component {
                 </label>
                 <input
                   type="text"
-                  className="form-control is-valid"
+                  className="form-control"
                   id="productName"
                   required
                 />
-                <div id="validationName" className="valid-feedback">
-                  Ok
-                </div>
               </div>
               <div className="col-10">
                 <label htmlFor="productDescription" className="form-label">
@@ -52,13 +58,10 @@ class ManagerProducts extends React.Component {
                 </label>
                 <input
                   type="text"
-                  className="form-control is-valid"
+                  className="form-control"
                   id="productDescription"
                   required
                 />
-                <div id="validationDescription" className="valid-feedback">
-                  Ok
-                </div>
               </div>
               <div className="col-10">
                 <label htmlFor="productImage" className="form-label">
@@ -66,45 +69,13 @@ class ManagerProducts extends React.Component {
                 </label>
                 <input
                   type="text"
-                  className="form-control is-invalid"
+                  className="form-control"
                   id="productImage"
-                  aria-describedby="validationServer03Feedback"
+                  placeholder="http://..."
                   required
                 />
-                <div
-                  id="validationServer03Feedback"
-                  className="invalid-feedback"
-                >
-                  Please provide a image Url.
-                </div>
               </div>
-              <div className="col-4">
-                <label
-                  htmlFor="validationServerUsername"
-                  className="form-label"
-                >
-                  <strong>Price</strong>
-                </label>
-                <div className="input-group has-validation">
-                  <span className="input-group-text" id="inputGroupPrepend3">
-                    $
-                  </span>
-                  <input
-                    type="text"
-                    className="form-control is-invalid"
-                    id="validationServerUsername"
-                    aria-describedby="inputGroupPrepend3 validationServerUsernameFeedback"
-                    required
-                  />
-                  <div
-                    id="validationServerUsernameFeedback"
-                    className="invalid-feedback"
-                  >
-                    Please provide a price.
-                  </div>
-                </div>
-              </div>
-              <div className="col-3">
+              <div className="col-10">
                 <label htmlFor="validationServer04" className="form-label">
                   <strong>Category</strong>
                 </label>
@@ -119,29 +90,46 @@ class ManagerProducts extends React.Component {
                   ))}
                 </select>
               </div>
-              <div className="col-3">
+              <div className="col-5">
+                <label
+                  htmlFor="validationServerUsername"
+                  className="form-label"
+                >
+                  <strong>Price</strong>
+                </label>
+                <div className="input-group has-validation">
+                  <span className="input-group-text" id="inputGroupPrepend3">
+                    $
+                  </span>
+                  <input
+                    type="text"
+                    className="form-control"
+                    id="validationServerUsername"
+                    placeholder="00.00"
+                    required
+                  />
+                </div>
+              </div>
+              <div className="col-5">
                 <label htmlFor="validationServer05" className="form-label">
                   <strong>Rating</strong>
                 </label>
                 <input
                   type="number"
-                  className="form-control is-invalid"
+                  className="form-control"
                   id="validationServer05"
-                  aria-describedby="validationServer05Feedback"
+                  placeholder="0 -> 5.0"  
                   required
                 />
-                <div
-                  id="validationServer05Feedback"
-                  className="invalid-feedback"
-                >
-                  Please provide a rating.
+                <div>
+                  Please provide a rating 0 to 5.
                 </div>
               </div>
 
               <div className="col-12">
-                <button className="btn btn-primary" type="submit">
-                  Submit product
-                </button>
+                  <button className="btn btn-primary" type="submit">
+                    Submit product
+                  </button>
               </div>
             </form>
           </div>
