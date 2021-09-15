@@ -3,7 +3,20 @@ import "../css/Product.css";
 import { useStateValue } from "./StateProvider";
 
 function Product(props) {
-  const product = props.state.products[props.num];
+  let id, title, image, price, rating;
+  try {
+    id = props.state.products[props.num]._id;
+    title = props.state.products[props.num].title;
+    image = props.state.products[props.num].image;
+    price = props.state.products[props.num].price;
+    rating = props.state.rate;
+  } catch (err) {
+    id = null;
+    title = null;
+    image = null;
+    price = null;
+    rating = 0;
+  }
 
   const [{ basket }, dispatch] = useStateValue();
 
@@ -11,37 +24,43 @@ function Product(props) {
     dispatch({
       type: "ADD_TO_BASKET",
       item: {
-        id: product.title._id,
-        title: product.title,
-        image: product.image,
-        price: product.price,
-        rating: props.rate,
+        id: id,
+        title: title,
+        image: image,
+        price: price,
+        rating: rating,
       },
     });
   };
 
   return (
-    <div className="product">
-      <div className="product_info">
-        <p>{product.title}</p>
-        <p className="product_price">
-          <small>$</small>
-          <strong>{product.price}</strong>
-          <div className="product_rating">
-            {Array(props.rate)
-              .fill()
-              .map((_, i) => (
-                <p>⭐</p>
-              ))}
+    <>
+      {id === null ? (
+        <></>
+      ) : (
+        <div className="product">
+          <div className="product_info">
+            <p>{title}</p>
+            <p className="product_price">
+              <small>$</small>
+              <strong>{price}</strong>
+              <div className="product_rating">
+                {Array(rating)
+                  .fill()
+                  .map((_, i) => (
+                    <p>⭐</p>
+                  ))}
+              </div>
+            </p>
           </div>
-        </p>
-      </div>
-      <img src={product.image} alt="Book" />
+          <img src={image} alt="Book" />
 
-      <button onClick={addToBasket} className="btn-add-basket">
-        Add to Basket{" "}
-      </button>
-    </div>
+          <button onClick={addToBasket} className="btn-add-basket">
+            Add to Basket{" "}
+          </button>
+        </div>
+      )}
+    </>
   );
 }
 

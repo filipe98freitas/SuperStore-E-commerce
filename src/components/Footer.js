@@ -41,8 +41,9 @@ const Footer = () => {
             <li>
               <a href="/">See How Make Money with Us</a>
             </li>
+            <br></br>
             <li>
-              <a href="/fakeautentication">Only for Employees</a>
+              <a href="/fakeautentication"><strong>Only for Employees</strong></a>
             </li>
           </ul>
         </div>
