@@ -9,8 +9,9 @@ Inspired by the homonymous tv series, this project simulates an e-commerce in a 
 
 ## Try now!
 
-![Hello](https://github.com/filipe98freitas/e-commerce/blob/main/src/images/giphy.gif) 
 Just follow the link:  ...
+
+![Hello](https://github.com/filipe98freitas/e-commerce/blob/main/src/images/giphy.gif) 
 
 ## Disclaimer
 
