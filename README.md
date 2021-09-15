@@ -9,6 +9,7 @@ Inspired by the homonymous tv series, this project simulates an e-commerce in a 
 
 ## Try now!
 
+![Try](https://i.giphy.com/media/l2SpQi0k9Whr556Vi/giphy.gif)
 Just follow the link:  ...
 
 ## Disclaimer
