@@ -14,7 +14,7 @@ Just follow the link:  ...
 
 ## Disclaimer
 
-This game-project it is part of the sixth  week of the Full Stack IronHack bootcamp, where in 5 days we apply what was learned.
+This project it is part of the sixth  week of the Full Stack IronHack bootcamp, where in 5 days we apply what was learned.
 
 "Superstore" is produced by Universal Television, a division of Universal Studio Group, in association with Spitzer Holding Company, Miller Green Broadcasting and The District.
 
