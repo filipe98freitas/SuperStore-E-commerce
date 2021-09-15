@@ -1,6 +1,6 @@
 # SuperStore e-commerce
 
-[![NPM](https://img.shields.io/npm/l/react)]
+![NPM](https://img.shields.io/npm/l/react)
 ![Title](https://github.com/filipe98freitas/e-commerce/blob/main/src/images/logo.png)
 
 ## About the project
