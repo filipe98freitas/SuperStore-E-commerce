@@ -4,6 +4,7 @@ import axios from "axios";
 import "../css/ManagerProducts.css";
 import NewProduct from "./NewProduct";
 import EditProduct from "./EditProduct";
+import FlipMove from "react-flip-move";
 
 class ManagerProducts extends React.Component {
   state = {
@@ -160,6 +161,7 @@ class ManagerProducts extends React.Component {
           {/* Lista de produtos */}
           <div className="col-6 mt-3">
             <h2>Product List</h2>
+            <FlipMove enterAnimation="elevator" leaveAnimation="elevator" />
             <div
               className="list-group bg-white"
               style={{ maxHeight: "85vh", overflow: "scroll" }}
