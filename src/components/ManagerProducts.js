@@ -71,6 +71,14 @@ class ManagerProducts extends React.Component {
       .post("https://ironrest.herokuapp.com/caiofilipeSuperstore", stateClone)
       .then((response) => {
         console.log(response);
+        this.setState({
+          title: "",
+          price: "",
+          description: "",
+          category: "",
+          image: "",
+          rating: {},
+          edit: false,})
       })
       .catch((err) => console.error(err));
   };
@@ -92,7 +100,7 @@ class ManagerProducts extends React.Component {
         console.log(response);
         this.setState({
           title: "",
-          price: 0,
+          price: "",
           description: "",
           category: "",
           image: "",

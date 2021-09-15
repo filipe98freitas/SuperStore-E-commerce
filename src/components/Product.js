@@ -1,28 +1,32 @@
 import React from "react";
 import "../css/Product.css";
 
-function Product({ id, title, image, price, rating }) {
+function Product(props) {
+ const product = props.state.products[props.num]
+
   return (
     <div className="product">
+    {console.log(props)}
       <div className="product_info">
-        <p>{title}</p>
+        <p>{product.title}</p>
         <p className="product_price">
           <small>$</small>
-          <strong>{price}</strong>
+          <strong>{product.price}</strong>
         </p>
         <div className="product_rating">
-          {Array(rating)
+          {Array(props.rate)
             .fill()
             .map((_, i) => (
               <p>⭐</p>
             ))}
         </div>
       </div>
-      <img src={image} alt="Book" />
+      <img src={product.image} alt="Book" />
 
       <button className="btn-add-basket">Add to Basket </button>
     </div>
   );
+  
 }
 
 export default Product;
