@@ -40,20 +40,18 @@ class Home extends React.Component {
     let arrNum = [];
     let arrRate = [];
     for (let i = 0; i < 6; i++) {
-      let randomNum = this.getRandom(0, this.state.products.length);
+      let randomNum = 0
       while (arrNum.indexOf(randomNum) >= 0) {
         randomNum = this.getRandom(0, this.state.products.length);
       }
       arrNum.push(randomNum);
     }
     for (let i = 0; i < arrNum.length; i++) {
-      let num = Math.floor(
-        parseInt(this.state.products[arrNum[i]]["rating"]["rate"])
-      );
-      if (num === undefined) {
-        num = 0;
+      let num = 0
+      while (num = 0) {
+        num = parseInt(this.state.products[arrNum[i]].rating.rate);
+        arrRate.push(num);
       }
-      arrRate.push(num);
     }
     this.setState({ num: arrNum, rate: arrRate });
   };
