@@ -6,8 +6,10 @@ import ManagerProducts from "./components/ManagerProducts";
 import Footer from "./components/Footer";
 import Login from "./components/Login";
 import FakeAutentication from "./components/FakeAutentication";
+import { useStateValue } from "./components/StateProvider";
 
 function App() {
+  const [{}, dispatch] = useStateValue();
   return (
     <BrowserRouter>
       <Header />
