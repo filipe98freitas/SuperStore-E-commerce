@@ -12,14 +12,14 @@ function Product(props) {
         <p className="product_price">
           <small>$</small>
           <strong>{product.price}</strong>
-        </p>
-        <div className="product_rating">
+          <div className="product_rating">
           {Array(props.rate)
             .fill()
             .map((_, i) => (
               <p>⭐</p>
             ))}
         </div>
+        </p>
       </div>
       <img src={product.image} alt="Book" />
 
