@@ -7,9 +7,15 @@ import ManagerProducts from "./components/ManagerProducts";
 import Footer from "./components/Footer";
 import Login from "./components/Login";
 import FakeAutentication from "./components/FakeAutentication";
+import { useStateValue } from "./components/StateProvider";
+
 import { auth } from "./components/firebase";
 
+
 function App() {
+
+  const [{}, dispatch] = useStateValue();
+  
   useEffect(() => {
     auth.onAuthStateChanged((authUser) => {
       console.log("THE USER IS >>> ", authUser);
