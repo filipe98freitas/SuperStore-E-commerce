@@ -5,8 +5,7 @@
 
 ## About the project
 
-![Hello](https://github.com/filipe98freitas/e-commerce/blob/main/src/images/giphy.gif)
-Inspired by the homonymous tv series, this project simulates an e-commerce in a simplified way, ensuring that the CRUD functions (Create Read, Update and Delete) are implemented through a public API and thus guaranteeing a working prototype.
+![Hello](https://github.com/filipe98freitas/e-commerce/blob/main/src/images/giphy.gif) Inspired by the homonymous tv series, this project simulates an e-commerce in a simplified way, ensuring that the CRUD functions (Create Read, Update and Delete) are implemented through a public API and thus guaranteeing a working prototype.
 
 ## Try now!
 
