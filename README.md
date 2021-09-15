@@ -9,7 +9,7 @@ Inspired by the homonymous tv series, this project simulates an e-commerce in a 
 
 ## Try now!
 
-Just follow the link: 
+Just follow the link:  ...
 
 ## Disclaimer
 
@@ -20,7 +20,7 @@ HTML / CSS / JS / React / Bootstrap / Firebase
 
 ## More about
 
-Link (pt-br) ...
+Link  ...
 
 ## Authors
 
