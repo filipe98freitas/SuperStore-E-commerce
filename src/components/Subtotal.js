@@ -12,6 +12,7 @@ function Subtotal() {
 
   return (
     <div className="subtotal">
+    {console.log(basket)}
       <CurrencyFormat
         renderText={(value) => (
           <>
