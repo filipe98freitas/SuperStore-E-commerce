@@ -55,7 +55,6 @@ class Home extends React.Component {
       }
       arrRate.push(num);
     }
-
     this.setState({ num: arrNum, rate: arrRate });
   };
 

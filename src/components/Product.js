@@ -9,13 +9,13 @@ function Product(props) {
     title = props.state.products[props.num].title;
     image = props.state.products[props.num].image;
     price = props.state.products[props.num].price;
-    rating = props.state.rate;
+    rating = props.rate;
   } catch (err) {
     id = null;
     title = null;
     image = null;
     price = null;
-    rating = 0;
+    rating = null;
   }
 
   const [{ basket }, dispatch] = useStateValue();
@@ -38,20 +38,21 @@ function Product(props) {
       {id === null ? (
         <></>
       ) : (
-        <div className="product">
+        <div key={id} className="product">
+          {console.log(props)}
           <div className="product_info">
             <p>{title}</p>
-            <p className="product_price">
+            <div className="product_price">
               <small>$</small>
               <strong>{price}</strong>
               <div className="product_rating">
                 {Array(rating)
                   .fill()
                   .map((_, i) => (
-                    <p>⭐</p>
+                    <p key={i}>⭐</p>
                   ))}
               </div>
-            </p>
+            </div>
           </div>
           <img src={image} alt="Book" />
 
