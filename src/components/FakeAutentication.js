@@ -23,7 +23,7 @@ function FakeAutentication() {
           <h6>Access restricted to registered employees only.</h6>
         </div>
 
-        <Link to="/restricted">
+        <Link exact to="/restricted">
           <button className="fake__registerButton">Enter</button>
         </Link>
       </div>
