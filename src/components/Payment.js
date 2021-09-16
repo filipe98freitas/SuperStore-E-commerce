@@ -5,6 +5,7 @@ import CheckoutProduct from "./CheckoutProduct";
 import { Link } from "react-router-dom";
 
 function Payment() {
+  // eslint-disable-next-line no-unused-vars
   const [{ basket, user }, dispatch] = useStateValue();
 
   return (
