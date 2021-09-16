@@ -18,6 +18,7 @@ function Product(props) {
     rating = null;
   }
 
+  // eslint-disable-next-line no-unused-vars
   const [{ basket }, dispatch] = useStateValue();
 
   const addToBasket = () => {
