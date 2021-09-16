@@ -9,7 +9,7 @@ Inspired by the homonymous tv series, this project simulates an e-commerce in a 
 
 ## Try now!
 
-Just follow the link:  ...
+Just follow the link:  https://superstorecommerce.netlify.app/
 
 ![Hello](https://github.com/filipe98freitas/e-commerce/blob/main/src/images/giphy.gif) 
 
