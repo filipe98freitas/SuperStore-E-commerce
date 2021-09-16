@@ -24,7 +24,7 @@ HTML / CSS / JS / React / Bootstrap / Firebase
 
 ## More about
 
-Link  ...
+Find more about on this [Link](https://docs.google.com/presentation/d/148bPS1HYkcFZAD788oz9tQIsIviKftu3lJQpYjDBnsc/edit?usp=sharing)
 
 ## Authors
 
