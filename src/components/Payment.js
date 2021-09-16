@@ -20,8 +20,8 @@ function Payment() {
         </div>
         <div className="payment_adress">
           <p>{user?.email}</p>
-          <p>123 React Lane</p>
-          <p>Los Angeles, CA</p>
+          <p>Alameda Jaú, 1301 - Jardim Paulista, São Paulo - SP</p>
+          <p>01420-001, Brasil</p>
         </div>
 
         <div className="payment_section"></div>
@@ -40,13 +40,9 @@ function Payment() {
             />
           ))}
         </div>
-
-        <div className="payment_section">
-          <div className="payment_title">
-            <h3>Payment Method</h3>
-          </div>
-          <div className="payment_details"></div>
-        </div>
+        <Link to="/">
+          <button className="Button">Buy now</button>
+        </Link>
       </div>
     </div>
   );
